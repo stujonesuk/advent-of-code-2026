@@ -68,6 +68,18 @@ def read_input_lines(day: int, part: int) -> list[str] | None:
     return content.strip().split('\n')
 
 
+def ascending_range_inclusive(bound1: int, bound2: int):
+    if bound1 > bound2:
+        return range(bound2, bound1 + 1)
+    else:
+        return range(bound1, bound2 + 1)
+
+def ascending_range_exclusive(bound1: int, bound2: int):
+    if bound1 > bound2:
+        return range(bound2 + 1, bound1)
+    else:
+        return range(bound1 + 1, bound2)
+
 class Grid:
     """A 2D grid structure for storing and accessing grid objects.
     
